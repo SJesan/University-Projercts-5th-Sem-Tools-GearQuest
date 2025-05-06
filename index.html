@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GearQuest</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-black text-white">
+    <!-- Navbar -->
+    <nav class="bg-black text-white px-6 py-4 flex items-center justify-between shadow-md">
+        <div class="text-2xl font-bold text-red-500 tracking-widest">
+            Gear<span class="tracking-normal text-white">Quest</span>
+        </div>
+
+        <ul class="hidden md:flex space-x-6 text-lg font-medium">
+            <li><a href="#" class="text-red-500">Home</a></li>
+            <li><a href="#" class="hover:text-red-500 transition">Shop</a></li>
+            <li><a href="#" class="hover:text-red-500 transition">Deals</a></li>
+            <li><a href="#" class="hover:text-red-500 transition">About</a></li>
+            <li><a href="#" class="hover:text-red-500 transition">Contact</a></li>
+        </ul>
+
+        <!-- for mobile -->
+        <div class="md:hidden">
+            <button id="menuBtn" class="focus:outline-none">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="md:hidden bg-black text-white px-6 py-4 hidden">
+        <ul class="space-y-4 text-lg font-medium">
+            <li><a href="#" class="text-red-500">Home</a></li>
+            <li><a href="#" class="hover:text-red-500">Shop</a></li>
+            <li><a href="#" class="hover:text-red-500">Deals</a></li>
+            <li><a href="#" class="hover:text-red-500">About</a></li>
+            <li><a href="#" class="hover:text-red-500">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- Cart Button -->
+    <a href="#" class="fixed top-20 right-6 z-50 bg-red-500 hover:bg-red-600 hover:scale-125 p-3 
+        rounded-full shadow-lg transition">
+        <img src="Images/shopping-cart.png" alt="Cart" class="w-10 h-10">
+    </a>
+
+
+<!-- Slider -->
+<div class="relative w-full h-[250px] sm:h-[350px] md:h-[450px] lg:h-[500px] overflow-hidden">
+    <div id="slider" class="flex transition-all duration-700 ease-in-out w-full h-full">
+        <img src="Images/slider-1.webp" class="w-full h-full object-cover flex-shrink-0" />
+        <img src="Images/slider-2.webp" class="w-full h-full object-cover flex-shrink-0" />
+        <img src="Images/slider-3.webp" class="w-full h-full object-cover flex-shrink-0" />
+    </div>
+
+    <!-- Buttons -->
+    <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2 sm:gap-4 z-10">
+        <button class="bg-red-500 hover:bg-red-600 text-white px-4 sm:px-6 py-1.5 sm:py-2 rounded-full text-sm sm:text-lg font-semibold transition">
+            Shop Now
+        </button>
+        <button class="bg-white text-black hover:bg-gray-300 transition px-4 sm:px-6 py-1.5 sm:py-2 rounded-full text-sm sm:text-lg font-semibold">
+            Explore
+        </button>
+    </div>
+
+    <!-- Navigation Arrows -->
+    <button id="prev"
+        class="absolute left-3 top-1/2 transform -translate-y-1/2 bg-red-500 hover:bg-red-600 text-white p-2 sm:p-3 rounded-full transition">
+        &#10094;
+    </button>
+    <button id="next"
+        class="absolute right-3 top-1/2 transform -translate-y-1/2 bg-red-500 hover:bg-red-600 text-white p-2 sm:p-3 rounded-full transition">
+        &#10095;
+    </button>
+</div>
+
+
+    <!-- Products Section -->
+    <section class="py-16 bg-gray-900">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold text-white mb-8">Featured Products</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                <!-- Product 1 -->
+                <div class="bg-black p-6 rounded-lg shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1610041321327-b794c052db27?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="Product 1" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <h3 class="text-xl font-semibold text-red-500 mb-2">Gaming Headset</h3>
+                    <p class="text-gray-400 mb-4">High-quality sound and comfort for long gaming sessions.</p>
+                    <p class="text-lg text-white mb-4">$59.99</p>
+                    <button class="bg-red-500 hover:bg-red-600 text-white px-6 py-2 rounded-full text-lg transition">Add to Cart</button>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="bg-black p-6 rounded-lg shadow-lg">
+                    <img src="https://plus.unsplash.com/premium_photo-1679177183572-a4056053b8a2?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="Product 2" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <h3 class="text-xl font-semibold text-red-500 mb-2">RGB Gaming Keyboard</h3>
+                    <p class="text-gray-400 mb-4">Customizable RGB lighting with mechanical keys for better response.</p>
+                    <p class="text-lg text-white mb-4">$89.99</p>
+                    <button class="bg-red-500 hover:bg-red-600 text-white px-6 py-2 rounded-full text-lg transition">Add to Cart</button>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="bg-black p-6 rounded-lg shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1563297007-0686b7003af7?q=80&w=2117&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="Product 3" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <h3 class="text-xl font-semibold text-red-500 mb-2">Gaming Mouse</h3>
+                    <p class="text-gray-400 mb-4">Precision and comfort with adjustable DPI for ultimate control.</p>
+                    <p class="text-lg text-white mb-4">$39.99</p>
+                    <button class="bg-red-500 hover:bg-red-600 text-white px-6 py-2 rounded-full text-lg transition">Add to art</button>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="bg-black p-6 rounded-lg shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1591370874773-6702e8f12fd8?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="Product 4" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <h3 class="text-xl font-semibold text-red-500 mb-2">Gaming Monitor</h3>
+                    <p class="text-gray-400 mb-4">Curved monitor with 144Hz refresh rate for smooth gaming visuals.</p>
+                    <p class="text-lg text-white mb-4">$299.99</p>
+                    <button class="bg-red-500 hover:bg-red-600 text-white px-6 py-2 rounded-full text-lg transition">Add to Cart</button>
+                </div>
+                <!-- Product 1 -->
+                <div class="bg-black p-6 rounded-lg shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1610041321327-b794c052db27?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="Product 1" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <h3 class="text-xl font-semibold text-red-500 mb-2">Gaming Headset</h3>
+                    <p class="text-gray-400 mb-4">High-quality sound and comfort for long gaming sessions.</p>
+                    <p class="text-lg text-white mb-4">$59.99</p>
+                    <button class="bg-red-500 hover:bg-red-600 text-white px-6 py-2 rounded-full text-lg transition">Add to Cart</button>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="bg-black p-6 rounded-lg shadow-lg">
+                    <img src="https://plus.unsplash.com/premium_photo-1679177183572-a4056053b8a2?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="Product 2" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <h3 class="text-xl font-semibold text-red-500 mb-2">RGB Gaming Keyboard</h3>
+                    <p class="text-gray-400 mb-4">Customizable RGB lighting with mechanical keys for better response.</p>
+                    <p class="text-lg text-white mb-4">$89.99</p>
+                    <button class="bg-red-500 hover:bg-red-600 text-white px-6 py-2 rounded-full text-lg transition">Add to Cart</button>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="bg-black p-6 rounded-lg shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1563297007-0686b7003af7?q=80&w=2117&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="Product 3" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <h3 class="text-xl font-semibold text-red-500 mb-2">Gaming Mouse</h3>
+                    <p class="text-gray-400 mb-4">Precision and comfort with adjustable DPI for ultimate control.</p>
+                    <p class="text-lg text-white mb-4">$39.99</p>
+                    <button class="bg-red-500 hover:bg-red-600 text-white px-6 py-2 rounded-full text-lg transition">Add to art</button>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="bg-black p-6 rounded-lg shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1591370874773-6702e8f12fd8?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="Product 4" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <h3 class="text-xl font-semibold text-red-500 mb-2">Gaming Monitor</h3>
+                    <p class="text-gray-400 mb-4">Curved monitor with 144Hz refresh rate for smooth gaming visuals.</p>
+                    <p class="text-lg text-white mb-4">$299.99</p>
+                    <button class="bg-red-500 hover:bg-red-600 text-white px-6 py-2 rounded-full text-lg transition">Add to Cart</button>
+                </div>
+
+                <!-- Also add more product here  -->
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-6 mt-16">
+        <div class="container mx-auto px-6 text-center">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+
+                <!-- Contact Information -->
+                <div>
+                    <h3 class="text-xl font-semibold text-red-500 mb-4">Contact Us</h3>
+                    <p class="text-gray-400 mb-2">Email: support@gearquest.com</p>
+                    <p class="text-gray-400 mb-2">Phone: +1 234 567 890</p>
+                    <p class="text-gray-400 mb-2">Address: 123 Gaming Street, GameCity</p>
+                </div>
+
+                <!-- Links -->
+                <div>
+                    <h3 class="text-xl font-semibold text-red-500 mb-4">Quick Links</h3>
+                    <ul class="text-gray-400">
+                        <li><a href="#" class="hover:text-red-500">Home</a></li>
+                        <li><a href="#" class="hover:text-red-500">Shop</a></li>
+                        <li><a href="#" class="hover:text-red-500">Deals</a></li>
+                        <li><a href="#" class="hover:text-red-500">About</a></li>
+                        <li><a href="#" class="hover:text-red-500">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="p-3">
+                    <!-- Social Media -->
+                    <div class="my-3">
+                        <h3 class="text-xl font-semibold text-red-500 mb-4">Follow Us</h3>
+                        <div class="flex justify-center space-x-6">
+                            <a href="#" class="text-gray-400 hover:text-red-500">Facebook</a>
+                            <a href="#" class="text-gray-400 hover:text-red-500">Twitter</a>
+                            <a href="#" class="text-gray-400 hover:text-red-500">Instagram</a>
+                        </div>
+                    </div>
+                    <!-- Developed By -->
+                    <div>
+                        <h3 class="text-xl font-semibold text-red-500 mb-4">Developed By</h3>
+                        <p class="text-gray-400">Sadikul_Jesan</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- Bottom Text -->
+        <div class="bg-gray-800 text-center p-4 mt-2">
+            <p class="text-gray-400 text-sm">© 2025 GearQuest. All rights reserved.</p>
+        </div>
+    </footer>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
